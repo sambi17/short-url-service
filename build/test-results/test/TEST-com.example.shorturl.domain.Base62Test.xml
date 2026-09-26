@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.shorturl.domain.Base62Test" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-09-26T20:32:34.076Z" hostname="US-TJ1K9GH7D6" time="0.008">
+  <properties/>
+  <testcase name="encodes the largest positive long within eleven characters()" classname="com.example.shorturl.domain.Base62Test" time="0.006"/>
+  <testcase name="encodes boundary values()" classname="com.example.shorturl.domain.Base62Test" time="0.001"/>
+  <testcase name="rejects negative values()" classname="com.example.shorturl.domain.Base62Test" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

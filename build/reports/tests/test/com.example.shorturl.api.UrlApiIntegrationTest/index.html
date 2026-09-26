@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - com.example.shorturl.api.UrlApiIntegrationTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<div class="breadcrumbs">
+<a class="breadcrumb" href="../index.html">all</a> &gt; 
+<span class="breadcrumb">com.example.shorturl.api.UrlApiIntegrationTest</span>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a class="successGroup" href="#">Gradle Test Run :test</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Gradle Test Run :test</h2>
+<h1>UrlApiIntegrationTest</h1>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a class="" href="#">summary</a>
+</li>
+<li>
+<a class="" href="#">standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>summary</h2>
+<div>
+<div class="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox">
+<div class="counter">5</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox">
+<div class="counter">0</div>
+<p>skipped</p>
+</div>
+</td>
+<td>
+<div class="infoBox duration">
+<div class="counter">2.865s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="test-results sortable">
+<thead>
+<tr>
+<th>Child</th>
+<th hidden="">Name</th>
+<th data-sort-default="desc">Tests</th>
+<th data-sort-default="desc">Failures</th>
+<th data-sort-default="desc">Skipped</th>
+<th data-sort-default="desc">Duration</th>
+<th>Success rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="success">creates reads redirects and deletes a short URL()</td>
+<td class="path" hidden="">creates reads redirects and deletes a short URL()</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td data-sort-value="30">0.030s</td>
+<td class="success" data-sort-value="100">100%</td>
+</tr>
+<tr>
+<td class="success">rejects a past expiration time()</td>
+<td class="path" hidden="">rejects a past expiration time()</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td data-sort-value="5">0.005s</td>
+<td class="success" data-sort-value="100">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="rejects-an-unsafe-URL-scheme().html">rejects an unsafe URL scheme()</a>
+</td>
+<td class="path" hidden="">rejects an unsafe URL scheme()</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td data-sort-value="646">0.646s</td>
+<td class="success" data-sort-value="100">100%</td>
+</tr>
+<tr>
+<td class="success">returns not found for an unknown code()</td>
+<td class="path" hidden="">returns not found for an unknown code()</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td data-sort-value="7">0.007s</td>
+<td class="success" data-sort-value="100">100%</td>
+</tr>
+<tr>
+<td class="success">returns validation details for a missing URL()</td>
+<td class="path" hidden="">returns validation details for a missing URL()</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td data-sort-value="15">0.015s</td>
+<td class="success" data-sort-value="100">100%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="tab">
+<h2>standard output</h2>
+<span class="code">
+<pre id="root-0-test-stdout-com.example.shorturl.api.UrlApiIntegrationTest">14:32:31.305 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.shorturl.api.UrlApiIntegrationTest]: UrlApiIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:32:31.400 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.shorturl.ShortUrlServiceApplication for test class com.example.shorturl.api.UrlApiIntegrationTest
+14:32:31.443 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.shorturl.api.UrlApiIntegrationTest]: UrlApiIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:32:31.446 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.shorturl.ShortUrlServiceApplication for test class com.example.shorturl.api.UrlApiIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.1)
+
+2026-09-26T14:32:31.644-06:00  INFO 25341 --- [short-url-service] [    Test worker] c.e.shorturl.api.UrlApiIntegrationTest   : Starting UrlApiIntegrationTest using Java 25.0.3 with PID 25341 (started by sambhavana.jain in /Users/sambhavana.jain/Documents/Codex/2026-09-26/create-a-new-kotlin-project-using/outputs/short-url-service)
+2026-09-26T14:32:31.645-06:00  INFO 25341 --- [short-url-service] [    Test worker] c.e.shorturl.api.UrlApiIntegrationTest   : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2026-09-26T14:32:32.601-06:00  INFO 25341 --- [short-url-service] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-26T14:32:32.702-06:00  INFO 25341 --- [short-url-service] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:shorturl user=SA
+2026-09-26T14:32:32.703-06:00  INFO 25341 --- [short-url-service] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-26T14:32:32.711-06:00  INFO 25341 --- [short-url-service] [    Test worker] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:shorturl (H2 2.4)
+2026-09-26T14:32:32.741-06:00  WARN 25341 --- [short-url-service] [    Test worker] o.f.c.internal.database.base.Database    : Using H2 2.4.240 which is newer than the version Flyway has been verified with. The latest verified version of H2 is 2.3.232.
+2026-09-26T14:32:32.754-06:00  INFO 25341 --- [short-url-service] [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table &quot;public&quot;.&quot;flyway_schema_history&quot; does not exist yet
+2026-09-26T14:32:32.756-06:00  INFO 25341 --- [short-url-service] [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.007s)
+2026-09-26T14:32:32.762-06:00  INFO 25341 --- [short-url-service] [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table &quot;public&quot;.&quot;flyway_schema_history&quot; ...
+2026-09-26T14:32:32.784-06:00  INFO 25341 --- [short-url-service] [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema &quot;public&quot;: &lt;&lt; Empty Schema &gt;&gt;
+2026-09-26T14:32:32.789-06:00  INFO 25341 --- [short-url-service] [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema &quot;public&quot; to version &quot;1 - create short url schema&quot;
+2026-09-26T14:32:32.798-06:00  INFO 25341 --- [short-url-service] [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema &quot;public&quot;, now at version v1 (execution time 00:00.003s)
+2026-09-26T14:32:33.255-06:00  INFO 25341 --- [short-url-service] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-09-26T14:32:33.255-06:00  INFO 25341 --- [short-url-service] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-09-26T14:32:33.261-06:00  INFO 25341 --- [short-url-service] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-09-26T14:32:33.269-06:00  INFO 25341 --- [short-url-service] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 14 ms
+2026-09-26T14:32:33.312-06:00  INFO 25341 --- [short-url-service] [    Test worker] c.e.shorturl.api.UrlApiIntegrationTest   : Started UrlApiIntegrationTest in 1.834 seconds (process running for 2.657)
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="root-0-test-stdout-com.example.shorturl.api.UrlApiIntegrationTest">Copy</button>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.7.1</a> at Sep 26, 2026, 2:32:34 PM</p>
+</div>
+</div>
+</body>
+</html>
