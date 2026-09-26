@@ -1,0 +1,149 @@
+openapi: 3.1.0
+info:
+  title: Short URL Service API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /api/v1/urls:
+    post:
+      summary: Create a short URL
+      operationId: createShortUrl
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateShortUrlRequest'
+      responses:
+        '201':
+          description: Created
+          headers:
+            Location:
+              schema:
+                type: string
+                format: uri
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShortUrl'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+  /api/v1/urls/{code}:
+    parameters:
+      - $ref: '#/components/parameters/Code'
+    get:
+      summary: Get short URL metadata
+      operationId: getShortUrl
+      responses:
+        '200':
+          description: Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShortUrl'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '410':
+          $ref: '#/components/responses/Gone'
+    delete:
+      summary: Delete a short URL
+      operationId: deleteShortUrl
+      responses:
+        '204':
+          description: Deleted
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /{code}:
+    parameters:
+      - $ref: '#/components/parameters/Code'
+    get:
+      summary: Redirect to the destination URL
+      operationId: redirectShortUrl
+      responses:
+        '302':
+          description: Redirect
+          headers:
+            Location:
+              schema:
+                type: string
+                format: uri
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '410':
+          $ref: '#/components/responses/Gone'
+components:
+  parameters:
+    Code:
+      name: code
+      in: path
+      required: true
+      schema:
+        type: string
+        pattern: '^[0-9A-Za-z]+$'
+        maxLength: 11
+  schemas:
+    CreateShortUrlRequest:
+      type: object
+      required: [url]
+      properties:
+        url:
+          type: string
+          format: uri
+          maxLength: 2048
+          example: https://example.com/a/long/path
+        expiresAt:
+          type: [string, 'null']
+          format: date-time
+    ShortUrl:
+      type: object
+      required: [code, shortUrl, longUrl, createdAt]
+      properties:
+        code:
+          type: string
+        shortUrl:
+          type: string
+          format: uri
+        longUrl:
+          type: string
+          format: uri
+        createdAt:
+          type: string
+          format: date-time
+        expiresAt:
+          type: [string, 'null']
+          format: date-time
+    Problem:
+      type: object
+      properties:
+        type:
+          type: string
+          format: uri
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
+        instance:
+          type: string
+          format: uri
+  responses:
+    BadRequest:
+      description: Invalid request
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    NotFound:
+      description: Code not found
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'
+    Gone:
+      description: Code expired
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/Problem'

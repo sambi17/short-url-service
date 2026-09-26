@@ -1,0 +1,48 @@
+x-app: &app
+  build: .
+  image: short-url-service:local
+  environment:
+    DB_URL: jdbc:postgresql://db:5432/shorturl
+    DB_USER: shorturl
+    DB_PASSWORD: shorturl-local-only
+    APP_BASE_URL: http://localhost:8080
+    COUNTER_BLOCK_SIZE: 1000
+  depends_on:
+    db:
+      condition: service_healthy
+  restart: unless-stopped
+
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: shorturl
+      POSTGRES_USER: shorturl
+      POSTGRES_PASSWORD: shorturl-local-only
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U shorturl -d shorturl"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  app1:
+    <<: *app
+
+  app2:
+    <<: *app
+
+  gateway:
+    image: nginx:1.27-alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - app1
+      - app2
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
